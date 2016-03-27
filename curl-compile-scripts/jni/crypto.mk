@@ -35,7 +35,7 @@ CRYPTO_CSOURCES := \
   bn/bn_word.c buffer/buf_err.c buffer/buf_str.c buffer/buffer.c \
   cmac/cm_ameth.c cmac/cm_pmeth.c cmac/cmac.c cms/cms_asn1.c cms/cms_att.c \
   cms/cms_cd.c cms/cms_dd.c cms/cms_enc.c cms/cms_env.c cms/cms_err.c \
-  cms/cms_ess.c cms/cms_io.c cms/cms_lib.c cms/cms_pwri.c cms/cms_sd.c \
+  cms/cms_ess.c cms/cms_io.c cms/cms_kari.c cms/cms_lib.c cms/cms_pwri.c cms/cms_sd.c \
   cms/cms_smime.c comp/c_rle.c comp/c_zlib.c comp/comp_err.c comp/comp_lib.c \
   conf/conf_api.c conf/conf_def.c conf/conf_err.c conf/conf_lib.c \
   conf/conf_mall.c conf/conf_mod.c conf/conf_sap.c cpt_err.c cryptlib.c \
@@ -71,7 +71,7 @@ CRYPTO_CSOURCES := \
   hmac/hmac.c krb5/krb5_asn.c lhash/lh_stats.c lhash/lhash.c md4/md4_dgst.c \
   md4/md4_one.c md5/md5_dgst.c md5/md5_one.c mem.c mem_clr.c mem_dbg.c \
   modes/cbc128.c modes/ccm128.c modes/cfb128.c modes/ctr128.c modes/gcm128.c \
-  modes/ofb128.c modes/xts128.c o_dir.c o_init.c o_str.c o_time.c \
+  modes/ofb128.c modes/xts128.c modes/wrap128.c o_dir.c o_init.c o_str.c o_time.c \
   objects/o_names.c objects/obj_dat.c objects/obj_err.c objects/obj_lib.c \
   objects/obj_xref.c ocsp/ocsp_asn.c ocsp/ocsp_cl.c ocsp/ocsp_err.c \
   ocsp/ocsp_ext.c ocsp/ocsp_ht.c ocsp/ocsp_lib.c ocsp/ocsp_prn.c \
@@ -108,7 +108,7 @@ CRYPTO_CSOURCES := \
   x509v3/v3_ncons.c x509v3/v3_ocsp.c x509v3/v3_pci.c x509v3/v3_pcia.c \
   x509v3/v3_pcons.c x509v3/v3_pku.c x509v3/v3_pmaps.c x509v3/v3_prn.c \
   x509v3/v3_purp.c x509v3/v3_skey.c x509v3/v3_sxnet.c x509v3/v3_utl.c \
-  x509v3/v3err.c
+  x509v3/v3err.c x509v3/v3_scts.c
 CRYPTO_LOCAL_SRC_FILES := $(addprefix ../../openssl/crypto/,$(CRYPTO_CSOURCES))
 CRYPTO_LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../openssl \
                     $(LOCAL_PATH)/../../openssl/include \
