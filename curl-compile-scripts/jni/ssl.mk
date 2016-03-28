@@ -3,7 +3,7 @@ SSL_COMMON_CFLAGS := \
   -DDSO_DLFCN -DHAVE_DLFCN_H -DOPENSSL_NO_CAST -DOPENSSL_NO_CAMELLIA \
   -DOPENSSL_NO_IDEA -DOPENSSL_NO_MDC2 -DOPENSSL_NO_SEED -DOPENSSL_NO_WHIRLPOOL
 SSL_CSOURCES := \
-  bio_ssl.c d1_both.c d1_clnt.c d1_lib.c d1_meth.c d1_pkt.c d1_srtp.c d1_srvr.c \
+  bio_ssl.c d1_both.c d1_enc.c d1_lib.c d1_pkt.c d1_srtp.c \
   kssl.c s23_clnt.c s23_lib.c s23_meth.c s23_pkt.c s23_srvr.c \
   s2_clnt.c s2_enc.c s2_lib.c s2_meth.c s2_pkt.c s2_srvr.c \
   s3_both.c s3_cbc.c s3_clnt.c s3_enc.c s3_lib.c s3_meth.c \
