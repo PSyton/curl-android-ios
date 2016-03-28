@@ -45,7 +45,7 @@ CRYPTO_CSOURCES := \
   des/fcrypt_b.c des/ofb64ede.c des/ofb64enc.c des/ofb_enc.c des/pcbc_enc.c \
   des/qud_cksm.c des/rand_key.c des/read2pwd.c des/rpc_enc.c des/set_key.c \
   des/str2key.c des/xcbc_enc.c dh/dh_ameth.c dh/dh_asn1.c dh/dh_check.c \
-  dh/dh_depr.c dh/dh_err.c dh/dh_gen.c dh/dh_key.c dh/dh_lib.c dh/dh_pmeth.c \
+  dh/dh_depr.c dh/dh_err.c dh/dh_gen.c dh/dh_key.c dh/dh_kdf.c dh/dh_lib.c dh/dh_pmeth.c \
   dsa/dsa_ameth.c dsa/dsa_asn1.c dsa/dsa_depr.c dsa/dsa_err.c dsa/dsa_gen.c \
   dsa/dsa_key.c dsa/dsa_lib.c dsa/dsa_ossl.c dsa/dsa_pmeth.c dsa/dsa_prn.c \
   dsa/dsa_sign.c dsa/dsa_vrf.c dso/dso_dl.c dso/dso_dlfcn.c dso/dso_err.c \

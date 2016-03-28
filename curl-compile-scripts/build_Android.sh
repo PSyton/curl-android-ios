@@ -11,7 +11,7 @@ else
 fi
 
 REL_SCRIPT_PATH="$(dirname $0)"
-SCRIPTPATH=$(realpath $REL_SCRIPT_PATH)
+SCRIPTPATH=$PWD
 CURLPATH="$SCRIPTPATH/../curl"
 SSLPATH="$SCRIPTPATH/../openssl"
 
@@ -108,10 +108,41 @@ fi
 PLATFORMS=(arm64-v8a x86_64 mips64 armeabi armeabi-v7a x86 mips armeabi-v7a-hard)
 DESTDIR=$SCRIPTPATH/../prebuilt-with-ssl/android
 
+for p in ${PLATFORMS[*]}; do
+  mkdir -p $DESTDIR/$p
+  STRIP=$($SCRIPTPATH/ndk-which strip $p)
+
+  SRC=$SCRIPTPATH/obj/local/$p/libcrypto.a
+  DEST=$DESTDIR/$p/libcrypto.a
+
+  if [ -z "$STRIP" ]; then
+    echo "WARNING: Could not find 'strip' for $p"
+    cp $SRC $DEST
+  else
+    $STRIP $SRC --strip-debug -o $DEST
+  fi
+done
+
+for p in ${PLATFORMS[*]}; do
+  mkdir -p $DESTDIR/$p
+  STRIP=$($SCRIPTPATH/ndk-which strip $p)
+
+  SRC=$SCRIPTPATH/obj/local/$p/libssl.a
+  DEST=$DESTDIR/$p/libssl.a
+
+  if [ -z "$STRIP" ]; then
+    echo "WARNING: Could not find 'strip' for $p"
+    cp $SRC $DEST
+  else
+    $STRIP $SRC --strip-debug -o $DEST
+  fi
+done
+
+
 for p in ${PLATFORMS[*]}; do 
   mkdir -p $DESTDIR/$p
   STRIP=$($SCRIPTPATH/ndk-which strip $p)
-  
+
   SRC=$SCRIPTPATH/obj/local/$p/libcurl.a
   DEST=$DESTDIR/$p/libcurl.a
 
@@ -122,6 +153,9 @@ for p in ${PLATFORMS[*]}; do
     $STRIP $SRC --strip-debug -o $DEST
   fi
 done
+
+#Copying OpenSSL headers
+cp -R -L $SSLPATH/include $DESTDIR/
 
 #Copying cURL headers
 cp -R $CURLPATH/include $DESTDIR/
