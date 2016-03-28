@@ -45,7 +45,8 @@ CRYPTO_CSOURCES := \
   des/fcrypt_b.c des/ofb64ede.c des/ofb64enc.c des/ofb_enc.c des/pcbc_enc.c \
   des/qud_cksm.c des/rand_key.c des/read2pwd.c des/rpc_enc.c des/set_key.c \
   des/str2key.c des/xcbc_enc.c dh/dh_ameth.c dh/dh_asn1.c dh/dh_check.c \
-  dh/dh_depr.c dh/dh_err.c dh/dh_gen.c dh/dh_key.c dh/dh_kdf.c dh/dh_lib.c dh/dh_pmeth.c \
+  dh/dh_depr.c dh/dh_err.c dh/dh_gen.c dh/dh_key.c dh/dh_kdf.c dh/dh_lib.c \
+  dh/dh_pmeth.c dh/dh_rfc5114.c \
   dsa/dsa_ameth.c dsa/dsa_asn1.c dsa/dsa_depr.c dsa/dsa_err.c dsa/dsa_gen.c \
   dsa/dsa_key.c dsa/dsa_lib.c dsa/dsa_ossl.c dsa/dsa_pmeth.c dsa/dsa_prn.c \
   dsa/dsa_sign.c dsa/dsa_vrf.c dso/dso_dl.c dso/dso_dlfcn.c dso/dso_err.c \
@@ -54,7 +55,7 @@ CRYPTO_CSOURCES := \
   ec/ec_curve.c ec/ec_cvt.c ec/ec_err.c ec/ec_key.c ec/ec_lib.c ec/ec_mult.c \
   ec/ec_oct.c ec/ec_pmeth.c ec/ec_print.c ec/eck_prn.c ec/ecp_mont.c \
   ec/ecp_nist.c ec/ecp_oct.c ec/ecp_smpl.c ecdh/ech_err.c ecdh/ech_key.c \
-  ecdh/ech_lib.c ecdh/ech_ossl.c ecdsa/ecs_asn1.c ecdsa/ecs_err.c \
+  ecdh/ech_kdf.c ecdh/ech_lib.c ecdh/ech_ossl.c ecdsa/ecs_asn1.c ecdsa/ecs_err.c \
   ecdsa/ecs_lib.c ecdsa/ecs_ossl.c ecdsa/ecs_sign.c ecdsa/ecs_vrf.c \
   err/err.c err/err_all.c err/err_prn.c \
   evp/bio_b64.c evp/bio_enc.c evp/bio_md.c evp/bio_ok.c evp/c_all.c \
